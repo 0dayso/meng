@@ -1,0 +1,84 @@
+body {
+	font: normal 11px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;
+	background: #E6EAE9;
+}
+
+a {
+	color: #c75f3e;
+}
+
+a.page {
+	color: #c75f3e;
+  font: 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+font.currentpage {
+	color: #c75f3e;
+  font: bold 16px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+caption {
+	padding: 0 0 5px 0;
+	width: 700px;	 
+	font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	text-align: right;
+}
+
+th {
+	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background: #CAE8EA no-repeat;
+}
+
+th.nobg {
+	border-top: 0;
+	border-left: 0;
+	border-right: 1px solid #C1DAD7;
+	background: none;
+}
+
+td {
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	background: #fff;
+	padding: 6px 6px 6px 12px;
+	color: #4f6b72;
+}
+
+
+td.alt {
+	background: #CAE8EA;
+	color: #4f6b72;
+}
+
+td.hl {
+	background: #CAE8EA;
+	color: #4f6b72;
+}
+
+.highlight {
+	font-size: 20px;
+	color: #ff0000;
+}
+
+.highlight_blue {
+	font-size: 20px;
+	color: #0000ff;
+}
+
+.normal {
+	font-size: 12px;
+	color: #4f6b72;
+}
+
+.formdiv {
+	display: none
+}
