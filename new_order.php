@@ -301,6 +301,7 @@
   <option value="lego_citi@qq.com">lego_citi@qq.com</option>
   <option value="lego_comm@qq.com">lego_comm@qq.com</option>
   <option value="lego_spdb@qq.com">lego_spdb@qq.com</option>
+  <option value="lego_ihg@qq.com">lego_ihg@qq.com</option>
   <option value="NA">N/A</option>
 </select></span>
 <span>支付方式:

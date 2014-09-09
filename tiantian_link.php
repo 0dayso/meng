@@ -1,4 +1,6 @@
 <?php
+//列出tiantian关联运单后的发货清单
+
 require("conn.php");
 
 date_default_timezone_set('Asia/Shanghai');
