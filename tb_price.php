@@ -75,6 +75,7 @@ if (isset($_GET["msrp"]))
 }
 else
 {
+	/*
 	$query = "SELECT MIN(Price) AS LowPrice,TaobaoID FROM TB_Item_Price WHERE `Filter`=0 AND LegoID = '".$mysqli->real_escape_string($legoid)."';";
 	$result = $mysqli->query($query);
 	if ($row = $result->fetch_array(MYSQLI_ASSOC))
@@ -86,19 +87,20 @@ else
 	}
 	else
 	{
-		$query = "SELECT CNPrice,USPrice FROM DB_Set WHERE LegoID = '".$mysqli->real_escape_string($legoid)."';";
+	*/
+		$query = "SELECT CNPrice,USPrice,Weight FROM DB_Set WHERE LegoID = '".$mysqli->real_escape_string($legoid)."';";
 		$result = $mysqli->query($query);
 		if ($row = $result->fetch_array(MYSQLI_ASSOC))
 		{
 			if ($row['CNPrice'] > 0)
 			{
-				$LowPrice = $row['CNPrice']*0.5;
-				$HighPrice = $row['CNPrice']*2;
+				$LowPrice = round($row['CNPrice']*0.5, 2);
+				$HighPrice = round($row['CNPrice']*1.5, 2);
 			}
 			elseif ($row['USPrice'] > 0)
 			{
-				$LowPrice = $row['USPrice']*6.3*0.5;
-				$HighPrice = $row['USPrice']*6.3*2;
+				$LowPrice = round(($row['USPrice']*6.3+($row['Weight']/453.59237*40))*0.7, 2);
+				$HighPrice = round(($row['USPrice']*6.3+($row['Weight']/453.59237*40))*1.5, 2);
 			}
 			else
 			{
@@ -109,7 +111,7 @@ else
 		{
 			$HighPrice = 0;
 		}
-	}
+	//}
 }
 
 $query = "SELECT `TaobaoID`,`Price`,`Volume`,`Filter`,`Force`,`Title`,`Seller` FROM TB_Item_Price WHERE LegoID = '".$mysqli->real_escape_string($legoid)."';";
