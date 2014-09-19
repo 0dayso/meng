@@ -31,10 +31,12 @@ if (isset($_GET["code"]))
 	$refresh_token = strtolower($objResponse->{'refresh_token'});
 	$taobao_user_id = floatval($objResponse->{'taobao_user_id'});
 
+	/*
 	echo date('Y-m-d H:i:s')." Token updated.</br>\r\n";
 	echo "Access_Token: ".$access_token."</br>\r\n";
 	echo "Refresh_Token: ".$refresh_token."</br>\r\n";
-	
+	*/
+
 	$conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die ("数据库错误：".mysql_error());
 	mysql_query("SET NAMES UTF8;", $conn);
 	mysql_query("SET time_zone = '+08:00';", $conn);
@@ -43,10 +45,14 @@ if (isset($_GET["code"]))
 	$r=mysql_db_query($mysql_database, $strsql, $conn);
 
 	mysql_close($conn);
-	
+
+	$url = $_GET["r"];
+	header("Location: http://$_SERVER[HTTP_HOST]$url");
+	/*
 	echo "<script language=\"javascript\" type=\"text/javascript\">";
-	echo "window.location.href=\"taobao_instock.php\"";
+	echo "window.location.href=\"http://$_SERVER[HTTP_HOST]/$url\"";
 	echo "</script>";
+	*/
 }
 else
 {
